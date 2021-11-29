@@ -51,6 +51,57 @@ redux-logger : 리덕스 프로젝트를 진행할 때, console창을 통해 현
 redux-router-dom
 react-router-redux : 프로젝트의 url에 다른 router 전환
 
+---
+
+redux정리 - fastcampus
+
+액션 : 상태의 어떤 변화가 필요하게 될 때 액션을 발생시킨다.
+
+```javascript
+{
+  type : "TOGGLE_VALUE",
+  data:{ // 해당 데이터를 추가하겠다
+    id : 0,
+    text : 'hello redux'
+  }
+}
+```
+
+액션 생성함수 (Action Creator) 필수X
+
+```javascript
+
+export function addTodo(data) {
+  return{
+    type:"ADD_TODO",
+    data...
+  }
+}
+
+export const changeiNput = text=>({...})
+
+
+
+액션생성함수를 사용하지 않는다면 액션을 발생시킬때마다 직접 액션 객체를 작성해야하는 불편이 있다.
+```
+
+리듀서 (Reducer) === useReducer
+: 변화를 일으키는 함수
+
+```javascript
+//액션 타입을 가지고 , 무엇인지에 따라 UPDATE 작업을 한다.
+function counter(state, action) {
+  //reducer에서는 불변성을 유지해줘야 한다.
+  switch (action.type) {
+    case "INCREASE":
+      return state + 1;
+    default:
+      return state;
+  }
+}
+//기존에 있는 객체나 배열을 건들이지 않고, 새로운 객체를 만들어야한다. (... or concat)
+```
+
 참고사항
 
 - https://github.com/changhoi/redux-async-demo
