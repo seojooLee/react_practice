@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import HooksDefault from "./hooks_test/HooksDefault";
-import ReduxDefault from "./redux_test/ReduxDefault";
+//import "./redux_test/ReduxDefault";
+
 import UseRefStudy from "./fastCampus/useRef";
 import UseReducerStudy from "./fastCampus/useReducer";
 function ReactTEST() {
@@ -14,7 +15,7 @@ function ReactTEST() {
         </li>
         <li>
           - Redux
-          <ReduxDefault></ReduxDefault>
+          {/* <ReduxDefault></ReduxDefault> */}
         </li>
         <li>
           -fastCampus
