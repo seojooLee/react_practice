@@ -11,8 +11,9 @@ import { Provider } from "react-redux"; //Provider을 통해 리액트 프로젝
 import { createStore } from "redux"; //store 생성하는 함수
 import rootReducer from "./redux_test";
 import CounterContainer from "./redux_test/containers/CounterContainer";
-
-const store = createStore(rootReducer);
+import { composeWithDevTools } from "redux-devtools-extension";
+import TodosContainer from "./redux_test/containers/TodosContainer";
+const store = createStore(rootReducer, composeWithDevTools()); //리덕스의 action, dispatch 내용이 확인 가능하다.
 console.log(store.getState());
 
 function ReactTEST() {
@@ -27,6 +28,7 @@ function ReactTEST() {
           - Redux
           <Provider store={store}>
             <CounterContainer />
+            <TodosContainer />
           </Provider>
           {/* <ReduxDefault></ReduxDefault> */}
         </li>
