@@ -160,11 +160,34 @@ axios.get//네트워크 요청
 - 리듀서 : export default, 액션 생성함수 : export
 
 ```
+
     리덕스 스토어
 ↓ 스토어 상태 불러옴   ↑ (액션 디스패치)
 컨테이너 컴포넌트 <상태관리>
 ↓ (props)
 프레젠테이셔널 컴포넌트 <UI 집중>
+
+```
+
+# useSelector 최적화
+
+shallowEqual
+
+```js
+const object = {
+  a: {
+    x: 1,
+    y: 2,
+    z: 3,
+  },
+  b: 1,
+  c: [1, 2, 3, 4],
+};
+
+//shallowEqual을 통해서 object의 left, right를 비교할 경우
+
+[left,right] => left.a === right.a && left.b === right.b&& left.c ===right.c
+
 
 ```
 
