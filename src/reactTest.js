@@ -9,10 +9,10 @@ import UseReducerStudy from "./fastCampus/useReducer";
 //프로젝트에 리덕스 적용하기
 import { Provider } from "react-redux"; //Provider을 통해 리액트 프로젝트에서 리덕스를 적용할 수있다.
 import { createStore } from "redux"; //store 생성하는 함수
-import rootReducer from "./redux_test";
-import CounterContainer from "./redux_test/containers/CounterContainer";
+import rootReducer from "./redux";
+import CounterContainer from "./redux/containers/CounterContainer";
 import { composeWithDevTools } from "redux-devtools-extension";
-import TodosContainer from "./redux_test/containers/TodosContainer";
+import TodosContainer from "./redux/containers/TodosContainer";
 const store = createStore(rootReducer, composeWithDevTools()); //리덕스의 action, dispatch 내용이 확인 가능하다.
 console.log(store.getState());
 

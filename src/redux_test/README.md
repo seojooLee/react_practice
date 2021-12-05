@@ -173,20 +173,52 @@ axios.get//네트워크 요청
 
 shallowEqual
 
+# connectHook
+
 ```js
 const object = {
   a: {
     x: 1,
     y: 2,
-    z: 3,
+    z: 3, //
   },
   b: 1,
   c: [1, 2, 3, 4],
 };
 
 //shallowEqual을 통해서 object의 left, right를 비교할 경우
-
 [left,right] => left.a === right.a && left.b === right.b&& left.c ===right.c
+
+a.z값만 바겼을 경우 감지를 못한다. 그리하여 불변성을 유지해준다면 감지를 해준다.
+
+
+
+```
+
+connect => 현재는 사용하지않음 (useSelect가 나오게 되면서 쓰지 않음)
+Props 를 통해 리덕스의 상태 도는 액션을 디스패치하는 함수를 받아온다.
+
+-- HOC : 재사용되는 값, 함수를 props로 받아올 수 있게 해주는 옛날 패턴이다.
+
+```js
+function testFunction(WrappedComponent){ //컴포넌트를 파라미터로 가져온다. ,
+// 새로운 컴포넌트를 만들어서 return 해준다. => 원하는 특정 값을 넣어줌
+  return (props)=> <WrappedComponent {...props} somethings="Something" />
+}
+//something props를 가져와 렌더링 함
+const MyComponent = ({something}) =>{
+  return <div>{something}</div>
+}
+//withSomething을 사용하고, MyComponent에 something을 넣어주지 않아도 withSomething이
+//저절로 채워준다.
+const EnhancedMyComponent = withSomething(MyComponent);
+
+const App =() =>{
+  return <EnhancedMyComponent/>
+}
+
+connect를 꼭 클래스형 컴포넌트에서 쓸 필요가 없다.
+
 
 
 ```
