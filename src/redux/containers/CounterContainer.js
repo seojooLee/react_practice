@@ -28,7 +28,7 @@ function CounterContainer() {
     //   return left.diff === right.diff && left.number === right.number;
     // }
     //2
-    shallowEqual
+    shallowEqual //객체안의 모든 값을 제대로 비교하는 것이 아니다. 얕게 비교한다.
   ); //equality
 
   //최적화 되지 않은 방법
