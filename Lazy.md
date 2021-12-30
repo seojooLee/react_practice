@@ -12,12 +12,6 @@ import \* as api from './api'
 import and export may only appear at the top level
 ```
 
-if(editPost === true){
-import('./editpost)
-.then((module)=> module.showEditor())
-.catch((e)=> )
-}
-
 React.lazy : import를 적절하게 해준다.
 
 import Settings from './Settings'
@@ -28,13 +22,17 @@ const Settings = React.lazy(()=> import('./Settings'))
 
 먄약 사용자가 트위터라는 방문을 하지 않았을 때 (트위터에 관해 import를 받아올 필요X)
 
-const Tweets = React.lazy(()=> import('./Tweets'));
+```javascript
+const Tweets = React.lazy(() => import("./Tweets"));
 
 <React.Suspense fallback={<p>Loading</p>}>
-<Route>
-<Component/>
-</Route>
-</React.Suspense>
+  {" "}
+  //suspense로 감싸줌
+  <Route>
+    <Component />
+  </Route>
+</React.Suspense>;
+```
 
 ## 참고자료
 
