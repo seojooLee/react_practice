@@ -34,6 +34,17 @@ const Tweets = React.lazy(() => import("./Tweets"));
 </React.Suspense>;
 ```
 
+
+---
+# 불변성 
+리액트에서는 불변성의 의미가 상태관리에 있어 중요하다. 
+불변성을 지킨다 => 메모리 영역에서 값을 변경할 수 없다.
+불변성을 지키지 않을 경우에는 원본 데이터가 변경되므로 사이드 이펙트가 발생할 수 있다. 
+
+불변성을 지키기 위해서는 새로운 배열로 반환하는 메소드를
+활용하면 된다.
+하지만 splice는 원본 데이터를 변경하므로 불변성을 지켜주지 않는다. 
+
 ## 참고자료
 
 https://www.youtube.com/watch?v=0mQbxF-_S-M&ab_channel=uidotdev
