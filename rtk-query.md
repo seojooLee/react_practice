@@ -26,6 +26,12 @@ npm install @reduxjs/toolkit
 
 - 요청, 캐시 무효화, 공통 앱 설정을 관리하기 더 쉽다.
 
+* Mutations
+  뮤테이션은 서버에게 업데이트를 하여 로컬 캐시에게 변화를 준다.
+  뮤테이션 엔드포인트는 createApi 부분에서 정의된다. build.mutation()
+
+뮤테이션 엔드포인트는 쿼리 콜백 구조를 가져가야 한다.
+
 ---
 
 참고
