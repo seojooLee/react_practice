@@ -34,5 +34,18 @@ npm install @reduxjs/toolkit
 
 ---
 
+useQuery와 달리 mutation은 자동으로 실행되지않으므로 trigger를 통해 호출해야한다.
+
+error : 현재 에러가 있을 때
+isLoading : 응답을 기다리는 것이 끝났을 때
+isSuccess : 응답으로 부터 성공적으로 데이터를 받았을 때
+
+provideTags
+invaildTags
+onQueryStarted
+transformResponse
+
+---
+
 참고
 http://blog.hwahae.co.kr/all/tech/tech-tech/6946/
