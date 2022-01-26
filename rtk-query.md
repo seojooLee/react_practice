@@ -40,10 +40,15 @@ error : 현재 에러가 있을 때
 isLoading : 응답을 기다리는 것이 끝났을 때
 isSuccess : 응답으로 부터 성공적으로 데이터를 받았을 때
 
-provideTags
-invaildTags
-onQueryStarted
-transformResponse
+provideTags : 해당 받아온 리스트를 useSelector로 지정할 수 있도록 tag를 제공해준다.
+invaildTags : 앞서 provideTags로 invaildTag를 해줄 경우, 자동으로 상태가 업데이트 된다. refetch
+onQueryStarted : 해당 업데이트된 데이터로 상태를 업데이트 해준다.
+transformResponse : 쿼리로 부터 결과를 받아온다.
+
+//드래그 앤 드랍을 rtk query로 할 경우에
+onQueryStarted에서
+draft = list 전체를 주면 업데이트는 되지만 깜박이는 증상이 있다.
+그러므로 index별로 업데이트를 해주어야 깜박임을 해소한다.
 
 ---
 
